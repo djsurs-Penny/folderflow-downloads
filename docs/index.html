@@ -79,6 +79,29 @@
   .checksum { font-size: 12px; color: var(--muted); word-break: break-all; margin-top: 10px; font-family: Consolas, monospace; }
   footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 40px; }
   footer a { color: var(--accent); text-decoration: none; }
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .shots figure {
+    margin: 0;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .shots img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid var(--border);
+  }
+  .shots figcaption {
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
   .status { color: var(--warn); font-size: 14px; }
 </style>
 </head>
@@ -115,6 +138,20 @@
       <li>Runs as a Windows service — works with no user logged in</li>
       <li>Drag &amp; drop files directly onto hot folders in the dashboard</li>
     </ul>
+  </div>
+
+  <div class="card">
+    <h3>Screenshots</h3>
+    <div class="shots">
+      <figure><img src="screenshots/dashboard.png" alt="Dashboard"><figcaption>Dashboard</figcaption></figure>
+      <figure><img src="screenshots/hot-folders.png" alt="Hot Folders"><figcaption>Hot Folders</figcaption></figure>
+      <figure><img src="screenshots/print-accounting.png" alt="Print Accounting"><figcaption>Print Accounting</figcaption></figure>
+      <figure><img src="screenshots/logs.png" alt="Event Log"><figcaption>Event Log</figcaption></figure>
+      <figure><img src="screenshots/jobs-queue.png" alt="Jobs Queue"><figcaption>Jobs Queue</figcaption></figure>
+      <figure><img src="screenshots/printers.png" alt="Printers"><figcaption>Printers</figcaption></figure>
+      <figure><img src="screenshots/settings.png" alt="Settings"><figcaption>Settings</figcaption></figure>
+      <figure><img src="screenshots/history.png" alt="History"><figcaption>History</figcaption></figure>
+    </div>
   </div>
 
   <div class="card">
