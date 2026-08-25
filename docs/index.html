@@ -1,1 +1,310 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>FolderFlow NG — Download</title><meta name="description" content="Download FolderFlow NG: professional hot-folder document processing, print delivery and PDF workflow automation for Windows."><style>  :root {    --bg: #0b1220;    --panel: #111a2e;    --panel-2: #16213a;    --border: #223150;    --text: #e6edf7;    --muted: #8fa3c0;    --accent: #2f81f7;    --accent-2: #3fb950;    --warn: #d29922;    --danger: #f85149;    --radius: 12px;  }  * { box-sizing: border-box; margin: 0; padding: 0; }  body {    background: radial-gradient(1200px 600px at 70% -10%, #152238 0%, var(--bg) 55%);    color: var(--text);    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;    line-height: 1.55;    min-height: 100vh;  }  .wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 64px; }  header { text-align: center; margin-bottom: 40px; }  .logo {    width: 72px; height: 72px; border-radius: 18px; margin: 0 auto 18px;    background: linear-gradient(135deg, #2f81f7, #6f42c1);    display: flex; align-items: center; justify-content: center;    font-size: 36px; font-weight: 800; color: #fff;    box-shadow: 0 10px 30px rgba(47,129,247,.35);  }  h1 { font-size: 34px; font-weight: 700; letter-spacing: .3px; }  .tagline { color: var(--muted); font-size: 16px; margin-top: 8px; }  .card {    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);    padding: 24px; margin-bottom: 20px;  }  .release {    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;    background: linear-gradient(135deg, var(--panel-2), var(--panel));    border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; margin-bottom: 20px;  }  .release .meta h2 { font-size: 20px; }  .release .meta p { color: var(--muted); margin-top: 4px; font-size: 14px; }  .version-pill {    display: inline-block; background: rgba(63,185,80,.15); color: var(--accent-2);    border: 1px solid rgba(63,185,80,.4); border-radius: 999px; padding: 3px 12px; font-size: 13px; font-weight: 600;  }  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }  .btn {    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;    border-radius: 8px; padding: 12px 22px; font-size: 15px; font-weight: 600;    transition: transform .08s ease, box-shadow .2s ease;  }  .btn:hover { transform: translateY(-1px); }  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(47,129,247,.3); }  .btn-primary:hover { box-shadow: 0 8px 24px rgba(47,129,247,.45); }  .btn-ghost { background: var(--panel-2); color: var(--text); border: 1px solid var(--border); }  .btn-ghost:hover { border-color: var(--accent); }  .btn:disabled { opacity: .55; pointer-events: none; }  .btn .arr { font-size: 18px; }  h3 { font-size: 16px; margin: 22px 0 12px; }  ul.features { list-style: none; }  ul.features li { padding: 6px 0 6px 28px; position: relative; color: var(--text); }  ul.features li::before {    content: "✓"; position: absolute; left: 0; top: 6px; color: var(--accent-2); font-weight: 700;  }  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }  .req { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 14px; }  .req b { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }  .notes { color: var(--muted); font-size: 14px; white-space: pre-wrap; max-height: 260px; overflow-y: auto; }  .checksum { font-size: 12px; color: var(--muted); word-break: break-all; margin-top: 10px; font-family: Consolas, monospace; }  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 40px; }  footer a { color: var(--accent); text-decoration: none; }  .shots {    display: grid;    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));    gap: 16px;  }  .shots figure {    margin: 0;    background: var(--panel-2);    border: 1px solid var(--border);    border-radius: 8px;    overflow: hidden;    cursor: zoom-in;    transition: transform .12s ease, border-color .12s ease;  }  .shots figure:hover {    transform: translateY(-2px);    border-color: var(--accent);  }  .shots img {    width: 100%;    display: block;    border-bottom: 1px solid var(--border);  }  .shots figcaption {    padding: 8px 12px;    font-size: 13px;    color: var(--muted);    text-align: center;  }  .zoom-hint {    display: block;    text-align: center;    font-size: 12px;    color: var(--accent);    padding-bottom: 8px;    opacity: 0;    transition: opacity .12s ease;  }  .shots figure:hover .zoom-hint {    opacity: 1;  }  #lightbox {    position: fixed;    inset: 0;    z-index: 100;    display: none;    align-items: center;    justify-content: center;    background: rgba(3, 8, 18, .92);    padding: 24px;    cursor: zoom-out;  }  #lightbox.open { display: flex; }  #lightbox img {    max-width: 100%;    max-height: 100%;    border-radius: 10px;    box-shadow: 0 20px 60px rgba(0, 0, 0, .6);    cursor: zoom-out;  }  #lightbox figcaption {    position: absolute;    bottom: 18px;    left: 50%;    transform: translateX(-50%);    color: var(--text);    font-size: 14px;    background: rgba(0, 0, 0, .5);    padding: 6px 14px;    border-radius: 999px;  }  #lightbox .close-x {    position: absolute;    top: 14px;    right: 18px;    color: var(--text);    font-size: 28px;    line-height: 1;    cursor: pointer;    opacity: .8;  }  #lightbox .close-x:hover { opacity: 1; }  .status { color: var(--warn); font-size: 14px; }</style></head><body><div class="wrap">  <header>    <div class="logo">F</div>    <h1>FolderFlow NG</h1>    <p class="tagline">Hot-folder document processing, print delivery &amp; PDF workflow automation for Windows.</p>  </header>  <div class="release" id="releaseCard">    <div class="meta">      <h2>Latest release <span class="version-pill" id="versionPill">…</span></h2>      <p id="releaseDate">Loading release information…</p>    </div>    <div class="btn-row">      <a class="btn btn-primary" id="dlInstaller" href="#" disabled>        <span class="arr">⬇</span> Download installer      </a>      <a class="btn btn-ghost" id="dlPatch" href="#" disabled>Update patch</a>    </div>    <div class="checksum" id="checksum"></div>  </div>  <div class="card">    <h3>Feature highlights</h3>    <ul class="features">      <li>Drop files into any watched folder — automatically converted, printed or archived</li>      <li>Native PDF printing with watermark / header / footer stamping</li>      <li>Microsoft Office conversion (DOCX, XLSX, PPT) to PDF via the background service</li>      <li>Print accounting with per-user quotas and monthly usage reports</li>      <li>Enterprise security: DPAPI-encrypted secrets, parameterized SQL, signed SHA-256 updates</li>      <li>Runs as a Windows service — works with no user logged in</li>      <li>Drag &amp; drop files directly onto hot folders in the dashboard</li>    </ul>  </div>  <div class="card">    <h3>Screenshots <span style="font-weight:400;color:var(--muted);font-size:13px;">(click any image to zoom)</span></h3>    <div class="shots">      <figure class="shot" data-title="Dashboard"><img src="screenshots/dashboard.png?v=4" alt="Dashboard"><figcaption>Dashboard</figcaption><span class="zoom-hint">Click to zoom</span></figure>      <figure class="shot" data-title="Hot Folders"><img src="screenshots/hot-folders.png?v=4" alt="Hot Folders"><figcaption>Hot Folders</figcaption><span class="zoom-hint">Click to zoom</span></figure>      <figure class="shot" data-title="Print Accounting"><img src="screenshots/print-accounting.png?v=4" alt="Print Accounting"><figcaption>Print Accounting</figcaption><span class="zoom-hint">Click to zoom</span></figure>      <figure class="shot" data-title="Event Log"><img src="screenshots/logs.png?v=4" alt="Event Log"><figcaption>Event Log</figcaption><span class="zoom-hint">Click to zoom</span></figure>      <figure class="shot" data-title="Jobs Queue"><img src="screenshots/jobs-queue.png?v=4" alt="Jobs Queue"><figcaption>Jobs Queue</figcaption><span class="zoom-hint">Click to zoom</span></figure>      <figure class="shot" data-title="Printers"><img src="screenshots/printers.png?v=4" alt="Printers"><figcaption>Printers</figcaption><span class="zoom-hint">Click to zoom</span></figure>      <figure class="shot" data-title="Settings"><img src="screenshots/settings.png?v=4" alt="Settings"><figcaption>Settings</figcaption><span class="zoom-hint">Click to zoom</span></figure>      <figure class="shot" data-title="History"><img src="screenshots/history.png?v=4" alt="History"><figcaption>History</figcaption><span class="zoom-hint">Click to zoom</span></figure>    </div>  </div>  <div class="card">    <h3>System requirements</h3>    <div class="grid">      <div class="req"><b>OS</b>Windows 10 / 11 (x64)</div>      <div class="req"><b>Memory</b>2 GB minimum, 4 GB recommended</div>      <div class="req"><b>Disk</b>300 MB for install</div>      <div class="req"><b>Optional</b>Microsoft Office for DOCX/XLSX/PPT conversion</div>    </div>  </div>  <div class="card" id="releaseNotesCard" style="display:none">    <h3>Release notes</h3>    <div class="notes" id="releaseNotes"></div>  </div>  <div id="lightbox"><span class="close-x" id="lbClose">&times;</span><img id="lbImg" src="" alt=""><figcaption id="lbCaption"></figcaption></div>  <footer>    <a href="https://github.com/djsurs-Penny/folderflow-downloads">GitHub</a> ·    <a href="https://github.com/djsurs-Penny/folderflow-downloads/releases">All releases</a>    <br><br>FolderFlow NG — professional document workflow automation.  </footer></div><script>const API = "https://api.github.com/repos/djsurs-Penny/folderflow-downloads/releases/latest";const el = id => document.getElementById(id);async function load() {  try {    const res = await fetch(API, { headers: { Accept: "application/vnd.github+json" } });    if (!res.ok) throw new Error("HTTP " + res.status);    const release = await res.json();    const version = (release.tag_name || "").replace(/^v/i, "");    el("versionPill").textContent = "v" + version;    el("releaseDate").textContent = "Published " + new Date(release.published_at).toUTCString().replace(" GMT", " UTC");    let installer = null, patch = null, sha = "";    for (const a of (release.assets || [])) {      if (/setup.*\.exe$/i.test(a.name)) installer = a;      else if (/_to_/.test(a.name) && a.name.endsWith(".zip")) patch = a;    }    const shaMatch = (release.body || "").match(/[0-9a-fA-F]{64}/);    if (shaMatch) sha = shaMatch[0];    const dl = el("dlInstaller");    if (installer) {      dl.href = installer.browser_download_url;      dl.removeAttribute("disabled");      dl.firstChild.textContent = "⬇";      dl.innerHTML = "<span class='arr'>⬇</span> Download FolderFlowNG_Setup_" + version + ".exe";    }    const dp = el("dlPatch");    if (patch) {      dp.href = patch.browser_download_url;      dp.removeAttribute("disabled");      dp.textContent = "Update patch (" + version + ")";    }    if (sha) el("checksum").textContent = "SHA-256: " + sha;    if (release.body && release.body.trim()) {      el("releaseNotesCard").style.display = "";      el("releaseNotes").textContent = release.body.replace(/SHA-256:? [0-9a-fA-F]{64}/i, "").trim();    }  } catch (err) {    el("versionPill").textContent = "unavailable";    el("releaseDate").innerHTML = '<span class="status">Could not load release info (' + err.message + ').</span>';  }}load();// Lightbox: click any screenshot thumbnail to view full-size.const lb = document.getElementById("lightbox");const lbImg = document.getElementById("lbImg");const lbCaption = document.getElementById("lbCaption");const lbClose = document.getElementById("lbClose");document.querySelectorAll(".shot").forEach(el => {  el.addEventListener("click", () => {    const img = el.querySelector("img");    if (!img) return;    lbImg.src = img.src;    lbCaption.textContent = el.dataset.title || img.alt;    lb.classList.add("open");  });});function closeLightbox() { lb.classList.remove("open"); }lb.addEventListener("click", closeLightbox);lbClose.addEventListener("click", closeLightbox);document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FolderFlow NG — Download</title>
+<meta name="description" content="Download FolderFlow NG: professional hot-folder document processing, print delivery and PDF workflow automation for Windows.">
+<style>
+  :root {
+    --bg: #0b1220;
+    --panel: #111a2e;
+    --panel-2: #16213a;
+    --border: #223150;
+    --text: #e6edf7;
+    --muted: #8fa3c0;
+    --accent: #2f81f7;
+    --accent-2: #3fb950;
+    --warn: #d29922;
+    --danger: #f85149;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(1200px 600px at 70% -10%, #152238 0%, var(--bg) 55%);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 64px; }
+  header { text-align: center; margin-bottom: 40px; }
+  .logo {
+    width: 72px; height: 72px; border-radius: 18px; margin: 0 auto 18px;
+    background: linear-gradient(135deg, #2f81f7, #6f42c1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px; font-weight: 800; color: #fff;
+    box-shadow: 0 10px 30px rgba(47,129,247,.35);
+  }
+  h1 { font-size: 34px; font-weight: 700; letter-spacing: .3px; }
+  .tagline { color: var(--muted); font-size: 16px; margin-top: 8px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 24px; margin-bottom: 20px;
+  }
+  .release {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    background: linear-gradient(135deg, var(--panel-2), var(--panel));
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; margin-bottom: 20px;
+  }
+  .release .meta h2 { font-size: 20px; }
+  .release .meta p { color: var(--muted); margin-top: 4px; font-size: 14px; }
+  .version-pill {
+    display: inline-block; background: rgba(63,185,80,.15); color: var(--accent-2);
+    border: 1px solid rgba(63,185,80,.4); border-radius: 999px; padding: 3px 12px; font-size: 13px; font-weight: 600;
+  }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+    border-radius: 8px; padding: 12px 22px; font-size: 15px; font-weight: 600;
+    transition: transform .08s ease, box-shadow .2s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(47,129,247,.3); }
+  .btn-primary:hover { box-shadow: 0 8px 24px rgba(47,129,247,.45); }
+  .btn-ghost { background: var(--panel-2); color: var(--text); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--accent); }
+  .btn:disabled { opacity: .55; pointer-events: none; }
+  .btn .arr { font-size: 18px; }
+  h3 { font-size: 16px; margin: 22px 0 12px; }
+  ul.features { list-style: none; }
+  ul.features li { padding: 6px 0 6px 28px; position: relative; color: var(--text); }
+  ul.features li::before {
+    content: "✓"; position: absolute; left: 0; top: 6px; color: var(--accent-2); font-weight: 700;
+  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
+  .req { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 14px; }
+  .req b { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+  .notes { color: var(--muted); font-size: 14px; white-space: pre-wrap; max-height: 260px; overflow-y: auto; }
+  .checksum { font-size: 12px; color: var(--muted); word-break: break-all; margin-top: 10px; font-family: Consolas, monospace; }
+  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 40px; }
+  footer a { color: var(--accent); text-decoration: none; }
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .shots figure {
+    margin: 0;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: zoom-in;
+    transition: transform .12s ease, border-color .12s ease;
+  }
+  .shots figure:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
+  .shots img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid var(--border);
+  }
+  .shots figcaption {
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .zoom-hint {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: var(--accent);
+    padding-bottom: 8px;
+    opacity: 0;
+    transition: opacity .12s ease;
+  }
+  .shots figure:hover .zoom-hint {
+    opacity: 1;
+  }
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(3, 8, 18, .92);
+    padding: 24px;
+    cursor: zoom-out;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+    cursor: zoom-out;
+  }
+  #lightbox figcaption {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text);
+    font-size: 14px;
+    background: rgba(0, 0, 0, .5);
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+  #lightbox .close-x {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    color: var(--text);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: .8;
+  }
+  #lightbox .close-x:hover { opacity: 1; }
+  .status { color: var(--warn); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">F</div>
+    <h1>FolderFlow NG</h1>
+    <p class="tagline">Hot-folder document processing, print delivery &amp; PDF workflow automation for Windows.</p>
+  </header>
+
+  <div class="release" id="releaseCard">
+    <div class="meta">
+      <h2>Latest release <span class="version-pill" id="versionPill">…</span></h2>
+      <p id="releaseDate">Loading release information…</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary" id="dlInstaller" href="#" disabled>
+        <span class="arr">⬇</span> Download installer
+      </a>
+      <a class="btn btn-ghost" id="dlPatch" href="#" disabled>Update patch</a>
+    </div>
+    <div class="checksum" id="checksum"></div>
+  </div>
+
+  <div class="card">
+    <h3>Feature highlights</h3>
+    <ul class="features">
+      <li>Drop files into any watched folder — automatically converted, printed or archived</li>
+      <li>Native PDF printing with watermark / header / footer stamping</li>
+      <li>Microsoft Office conversion (DOCX, XLSX, PPT) to PDF via the background service</li>
+      <li>Print accounting with per-user quotas and monthly usage reports</li>
+      <li>Enterprise security: DPAPI-encrypted secrets, parameterized SQL, signed SHA-256 updates</li>
+      <li>Runs as a Windows service — works with no user logged in</li>
+      <li>Drag &amp; drop files directly onto hot folders in the dashboard</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Screenshots <span style="font-weight:400;color:var(--muted);font-size:13px;">(click any image to zoom)</span></h3>
+    <div class="shots">
+      <figure class="shot" data-title="Dashboard"><img src="screenshots/dashboard.png?v=4" alt="Dashboard"><figcaption>Dashboard</figcaption><span class="zoom-hint">Click to zoom</span></figure>
+      <figure class="shot" data-title="Hot Folders"><img src="screenshots/hot-folders.png?v=4" alt="Hot Folders"><figcaption>Hot Folders</figcaption><span class="zoom-hint">Click to zoom</span></figure>
+      <figure class="shot" data-title="Print Accounting"><img src="screenshots/print-accounting.png?v=4" alt="Print Accounting"><figcaption>Print Accounting</figcaption><span class="zoom-hint">Click to zoom</span></figure>
+      <figure class="shot" data-title="Event Log"><img src="screenshots/logs.png?v=4" alt="Event Log"><figcaption>Event Log</figcaption><span class="zoom-hint">Click to zoom</span></figure>
+      <figure class="shot" data-title="Jobs Queue"><img src="screenshots/jobs-queue.png?v=4" alt="Jobs Queue"><figcaption>Jobs Queue</figcaption><span class="zoom-hint">Click to zoom</span></figure>
+      <figure class="shot" data-title="Printers"><img src="screenshots/printers.png?v=4" alt="Printers"><figcaption>Printers</figcaption><span class="zoom-hint">Click to zoom</span></figure>
+      <figure class="shot" data-title="Settings"><img src="screenshots/settings.png?v=4" alt="Settings"><figcaption>Settings</figcaption><span class="zoom-hint">Click to zoom</span></figure>
+      <figure class="shot" data-title="History"><img src="screenshots/history.png?v=4" alt="History"><figcaption>History</figcaption><span class="zoom-hint">Click to zoom</span></figure>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>System requirements</h3>
+    <div class="grid">
+      <div class="req"><b>OS</b>Windows 10 / 11 (x64)</div>
+      <div class="req"><b>Memory</b>2 GB minimum, 4 GB recommended</div>
+      <div class="req"><b>Disk</b>300 MB for install</div>
+      <div class="req"><b>Optional</b>Microsoft Office for DOCX/XLSX/PPT conversion</div>
+    </div>
+  </div>
+
+  <div class="card" id="releaseNotesCard" style="display:none">
+    <h3>Release notes</h3>
+    <div class="notes" id="releaseNotes"></div>
+  </div>
+
+  <div id="lightbox"><span class="close-x" id="lbClose">&times;</span><img id="lbImg" src="" alt=""><figcaption id="lbCaption"></figcaption></div>
+
+  <footer>
+    <a href="https://github.com/djsurs-Penny/folderflow-downloads">GitHub</a> ·
+    <a href="https://github.com/djsurs-Penny/folderflow-downloads/releases">All releases</a>
+    <br><br>FolderFlow NG — professional document workflow automation.
+  </footer>
+</div>
+
+<script>
+const API = "https://api.github.com/repos/djsurs-Penny/folderflow-downloads/releases/latest";
+const el = id => document.getElementById(id);
+
+async function load() {
+  try {
+    const res = await fetch(API, { headers: { Accept: "application/vnd.github+json" } });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const release = await res.json();
+    const version = (release.tag_name || "").replace(/^v/i, "");
+
+    el("versionPill").textContent = "v" + version;
+    el("releaseDate").textContent = "Published " + new Date(release.published_at).toUTCString().replace(" GMT", " UTC");
+
+    let installer = null, patch = null, sha = "";
+    for (const a of (release.assets || [])) {
+      if (/setup.*\.exe$/i.test(a.name)) installer = a;
+      else if (/_to_/.test(a.name) && a.name.endsWith(".zip")) patch = a;
+    }
+    const shaMatch = (release.body || "").match(/[0-9a-fA-F]{64}/);
+    if (shaMatch) sha = shaMatch[0];
+
+    const dl = el("dlInstaller");
+    if (installer) {
+      dl.href = installer.browser_download_url;
+      dl.removeAttribute("disabled");
+      dl.firstChild.textContent = "⬇";
+      dl.innerHTML = "<span class='arr'>⬇</span> Download FolderFlowNG_Setup_" + version + ".exe";
+    }
+    const dp = el("dlPatch");
+    if (patch) {
+      dp.href = patch.browser_download_url;
+      dp.removeAttribute("disabled");
+      dp.textContent = "Update patch (" + version + ")";
+    }
+    if (sha) el("checksum").textContent = "SHA-256: " + sha;
+
+    if (release.body && release.body.trim()) {
+      el("releaseNotesCard").style.display = "";
+      el("releaseNotes").textContent = release.body.replace(/SHA-256:? [0-9a-fA-F]{64}/i, "").trim();
+    }
+  } catch (err) {
+    el("versionPill").textContent = "unavailable";
+    el("releaseDate").innerHTML = '<span class="status">Could not load release info (' + err.message + ').</span>';
+  }
+}
+load();
+
+// Lightbox: click any screenshot thumbnail to view full-size.
+const lb = document.getElementById("lightbox");
+const lbImg = document.getElementById("lbImg");
+const lbCaption = document.getElementById("lbCaption");
+const lbClose = document.getElementById("lbClose");
+
+document.querySelectorAll(".shot").forEach(el => {
+  el.addEventListener("click", () => {
+    const img = el.querySelector("img");
+    if (!img) return;
+    lbImg.src = img.src;
+    lbCaption.textContent = el.dataset.title || img.alt;
+    lb.classList.add("open");
+  });
+});
+
+function closeLightbox() { lb.classList.remove("open"); }
+lb.addEventListener("click", closeLightbox);
+lbClose.addEventListener("click", closeLightbox);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
+</script>
+</body>
+</html>
